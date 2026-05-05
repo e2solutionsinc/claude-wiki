@@ -1,0 +1,2244 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Internal guide for using Claude tools as a developer">
+      
+      
+      
+      
+        <link rel="prev" href="../multiple-claude-md/">
+      
+      
+        <link rel="next" href="../cowork-projects/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Global CLAUDE.md Setup - Claude Wiki - E2 Solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#global-claudemd-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Claude Wiki - E2 Solutions" class="md-header__button md-logo" aria-label="Claude Wiki - E2 Solutions" data-md-component="logo">
+      <div class="header-logos">
+  <img src="../../assets/e2-logo.png" alt="E2 Solutions" class="header-logo header-logo--e2">
+  <div class="header-logo-divider"></div>
+  <img src="../../assets/claude-logo.png" alt="Claude" class="header-logo header-logo--claude">
+</div>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Claude Wiki - E2 Solutions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Global CLAUDE.md Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Claude Wiki - E2 Solutions" class="md-nav__button md-logo" aria-label="Claude Wiki - E2 Solutions" data-md-component="logo">
+      <div class="header-logos">
+  <img src="../../assets/e2-logo.png" alt="E2 Solutions" class="header-logo header-logo--e2">
+  <div class="header-logo-divider"></div>
+  <img src="../../assets/claude-logo.png" alt="Claude" class="header-logo header-logo--claude">
+</div>
+    </a>
+    Claude Wiki - E2 Solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/claude-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude.ai Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code (CLI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/claude-cowork/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Cowork
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tsql-ssms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T-SQL and Stored Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects and Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects and Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Claude Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creating-claude-md/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating a CLAUDE.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiple-claude-md/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managing Multiple Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global CLAUDE.md Setup
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global CLAUDE.md Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-belongs-in-the-global-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What belongs in the global file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-we-put-in-ours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we put in ours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-it-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to set it up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-global-claudemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Global CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-formatting-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Formatting Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Formatting Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select-with-having" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT with HAVING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPDATE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-with-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPDATE with JOIN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-with-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE with JOIN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-into" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT INTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INSERT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declare-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DECLARE / SET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-with-joins-and-group-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT with JOINs and GROUP BY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temp-table-create-drop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temp Table CREATE / DROP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WHILE Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXECUTE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-from-advantage-architect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXECUTE from Advantage Architect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UNION ALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cowork-projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cowork Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../important-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Important Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snake-break/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Snake Break
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-belongs-in-the-global-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What belongs in the global file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-we-put-in-ours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we put in ours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-it-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to set it up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-global-claudemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Global CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-formatting-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Formatting Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Formatting Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select-with-having" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT with HAVING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPDATE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-with-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPDATE with JOIN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-with-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE with JOIN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-into" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT INTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INSERT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declare-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DECLARE / SET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-with-joins-and-group-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT with JOINs and GROUP BY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temp-table-create-drop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temp Table CREATE / DROP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WHILE Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXECUTE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-from-advantage-architect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXECUTE from Advantage Architect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UNION ALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="global-claudemd-setup">Global CLAUDE.md Setup</h1>
+<p>A global <code>CLAUDE.md</code> lives in your home directory (<code>~/CLAUDE.md</code>) and loads automatically for <strong>every</strong> Claude Code session, regardless of which project folder you start from. Use it for standards and templates that apply across all accounts  <strong>not for anything customer or database specific.</strong></p>
+<hr />
+<h2 id="what-belongs-in-the-global-file">What belongs in the global file</h2>
+<table>
+<thead>
+<tr>
+<th>Include</th>
+<th>Exclude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coding conventions (naming prefixes, style rules)</td>
+<td>Customer names or database names</td>
+</tr>
+<tr>
+<td>Stored procedure template</td>
+<td>Schema or table references</td>
+</tr>
+<tr>
+<td>SQL formatting examples</td>
+<td>Environment-specific config</td>
+</tr>
+<tr>
+<td>General patterns you use everywhere</td>
+<td>Anything that varies by account</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="location">Location</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>~/CLAUDE.md          ← global, loads for every session
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>~/eplus/CLAUDE.md    ← project-level, loads only from that folder
+</code></pre></div>
+<p>The global file and the project-level file both load when you start Claude Code from a project folder — they stack. Global conventions apply everywhere; project context fills in the specifics.</p>
+<hr />
+<h2 id="what-we-put-in-ours">What we put in ours</h2>
+<ul>
+<li>Coding Conventions</li>
+<li>Stored Procedure Template</li>
+<li>SQL Formatting Examples</li>
+</ul>
+<hr />
+<h2 id="how-to-set-it-up">How to set it up</h2>
+<ol>
+<li>
+<p>Open a terminal and run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>touch<span class="w"> </span>~/CLAUDE.md
+</code></pre></div>
+</li>
+<li>
+<p>Copy the full template below into <code>~/CLAUDE.md</code>.</p>
+</li>
+<li>
+<p>Start Claude Code from any project folder — the global file loads automatically.</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Keep the global file to standards and templates only. The moment you add a table name or database name, it starts bleeding into every other account's sessions.</p>
+</div>
+<hr />
+<h2 id="full-global-claudemd">Full Global CLAUDE.md</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># Global — SQL Development Standards</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="gu">## Coding Conventions</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">-</span><span class="w"> </span>Stored procedures: <span class="sb">`usp_`</span> prefix
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">-</span><span class="w"> </span>Temp tables: <span class="sb">`#tmp_`</span> prefix
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">-</span><span class="w"> </span>Always include <span class="sb">`SET NOCOUNT ON`</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">-</span><span class="w"> </span>Use <span class="sb">`TRY/CATCH`</span> for error handling
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">-</span><span class="w"> </span>No <span class="sb">`SELECT *`</span> in production code
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>---
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="gu">## Stored Procedure Template</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>```sql
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>USE AAD
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>GO
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>IF EXISTS (SELECT 1 FROM sysobjects WHERE name = &#39;usp_ADp1234_page_title_template_for_ww&#39;)
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>BEGIN
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    PRINT &#39;&#39;
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    PRINT &#39;Dropping old version of [usp_ADp1234_page_title_template_for_ww]&#39;
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    DROP PROCEDURE [dbo].[usp_ADp1234_page_title_template_for_ww]
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>END
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>GO
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>PRINT &#39;&#39;
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>PRINT &#39;Creating Stored Procedure usp_ADp1234_page_title_template_for_ww&#39;
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>GO
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>CREATE PROCEDURE [dbo].[usp_ADp1234_page_title_template_for_ww]
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>     <span class="ni">@in_ww_username</span>        NVARCHAR(10)
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    ,@in_wh_id              NVARCHAR(10)
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>    ,@in_location_id        INT
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    ,@in_start_date         VARCHAR(30)
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    ,@in_end_date           VARCHAR(30)
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="gu">    ,@in_tran_start         VARCHAR(30) -- passed in from search page to capturing when they started the tran   </span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="gu">--</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    ,@in_debug              VARCHAR(3) = &#39;NO&#39; -- Pass in &#39;YES&#39; to return results to SSMS
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>    ,@out_msg               VARCHAR(250) = NULL OUTPUT
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>AS
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>/* ================================================================================================
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>DESCRIPTION:
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>    This (put the description of what this sproc does here).
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>HISTORY:
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>    Date          Author                Description
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>--     MM/DD/YYYY    Your Name           KT-40 Created
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>HELPERS:
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>    GRANT EXECUTE ON usp_ADp1234_page_title_template_for_ww TO AAD_USER, WA_USER;
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>    Run the following, update the results and wrap with BEGIN TRAN and ROLLBACK for testing:
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>    usp_print_sproc usp_ADp1234_page_title_template_for_ww
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>================================================================================================ */
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>SET NOCOUNT ON;
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>-- START OF COMMON VARIABLES, STANDARD ACROSS SPROCS 
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>DECLARE
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>    <span class="ni">@c_obj_name</span>          VARCHAR(100) = OBJECT_NAME(@@PROCID),
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>    <span class="ni">@c_called_from</span>       NVARCHAR(250) = &#39;Config Name - Page Title&#39;,
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>    <span class="ni">@error_number</span>        INT,
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>    <span class="ni">@error_severity</span>      INT,
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>    <span class="ni">@error_state</span>         INT,
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>    <span class="ni">@error_line</span>          INT,
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>    <span class="ni">@error_message</span>       NVARCHAR(MAX),
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>    <span class="ni">@program_name</span>        NVARCHAR(MAX),
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>    <span class="ni">@call_string</span>         NVARCHAR(MAX),
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>    <span class="ni">@error_tag</span>           NVARCHAR(100),
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>    <span class="ni">@deadlock_retry</span>      TINYINT = 0, -- retry 3 times for a total of 4 attempts
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a>    <span class="ni">@starting_tran_count</span> TINYINT,
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>    <span class="ni">@internal_tran</span>       VARCHAR(3),
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a>    <span class="ni">@c_log_level</span>         TINYINT,
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a>    <span class="ni">@row_count</span>           INT
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a>    DECLARE <span class="ni">@t_buffer</span> table ( EventType NVARCHAR(30), Parms INT, EventInfo NVARCHAR(MAX) )
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>-- END OF COMMON
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a>
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a>-- LOCAL VARIABLES
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a>DECLARE 
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>     <span class="ni">@hu_id</span>                 NVARCHAR(30)
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a>
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a>-- INITIALIZE SPROC VARIABLES
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a>SET <span class="ni">@starting_tran_count</span> = @@TRANCOUNT
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a>START:
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a>BEGIN TRY
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a>
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a> -- INITIALIZE TRY VARIABLES and all TABLE VARIABLES not inside the transaction
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a>    SET <span class="ni">@internal_tran</span> = N&#39;NO&#39;;
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a>
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a>    -----------------------------------------------------------------------------------
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>    --  Set Log Level and Log Start with Input Parameters
+<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a>    -----------------------------------------------------------------------------------
+<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a>
+<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a>    -- Grab the Log Level and insert it if it doens&#39;t exsit (if <span class="ni">@in_wh_id</span> doesn&#39;t exist, you can remove it)
+<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a>    SELECT <span class="ni">@c_log_level</span> = log_level FROM t<span class="ge">_log_</span>control WITH(NOLOCK) WHERE wh_id = <span class="ni">@in_wh_id</span> AND source = <span class="ni">@c_obj_name</span>
+<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>    IF @@ROWCOUNT = 0
+<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a>    BEGIN
+<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a>        SET <span class="ni">@c_log_level</span> = 0
+<a id="__codelineno-2-102" name="__codelineno-2-102" href="#__codelineno-2-102"></a>        INSERT INTO t<span class="ge">_log_</span>control (wh_id, source, log_level) VALUES (@in_wh_id, <span class="ni">@c_obj_name</span>, <span class="ni">@c_log_level</span>)
+<a id="__codelineno-2-103" name="__codelineno-2-103" href="#__codelineno-2-103"></a>    END
+<a id="__codelineno-2-104" name="__codelineno-2-104" href="#__codelineno-2-104"></a>
+<a id="__codelineno-2-105" name="__codelineno-2-105" href="#__codelineno-2-105"></a>    IF <span class="ni">@in_debug</span> = N&#39;YES&#39;
+<a id="__codelineno-2-106" name="__codelineno-2-106" href="#__codelineno-2-106"></a>        BEGIN
+<a id="__codelineno-2-107" name="__codelineno-2-107" href="#__codelineno-2-107"></a>            UPDATE t<span class="ge">_log_</span>control 
+<a id="__codelineno-2-108" name="__codelineno-2-108" href="#__codelineno-2-108"></a>               SET log_level = 2 
+<a id="__codelineno-2-109" name="__codelineno-2-109" href="#__codelineno-2-109"></a>             WHERE wh_id = <span class="ni">@in_wh_id</span> 
+<a id="__codelineno-2-110" name="__codelineno-2-110" href="#__codelineno-2-110"></a>               AND source = <span class="ni">@c_obj_name</span> 
+<a id="__codelineno-2-111" name="__codelineno-2-111" href="#__codelineno-2-111"></a>               AND log_level &lt;&gt; 2
+<a id="__codelineno-2-112" name="__codelineno-2-112" href="#__codelineno-2-112"></a>          END
+<a id="__codelineno-2-113" name="__codelineno-2-113" href="#__codelineno-2-113"></a>    ELSE IF <span class="ni">@in_debug</span> = N&#39;NO&#39;
+<a id="__codelineno-2-114" name="__codelineno-2-114" href="#__codelineno-2-114"></a>        BEGIN
+<a id="__codelineno-2-115" name="__codelineno-2-115" href="#__codelineno-2-115"></a>            UPDATE t<span class="ge">_log_</span>control 
+<a id="__codelineno-2-116" name="__codelineno-2-116" href="#__codelineno-2-116"></a>               SET log_level = 0 
+<a id="__codelineno-2-117" name="__codelineno-2-117" href="#__codelineno-2-117"></a>             WHERE wh_id = <span class="ni">@in_wh_id</span> 
+<a id="__codelineno-2-118" name="__codelineno-2-118" href="#__codelineno-2-118"></a>               AND source = <span class="ni">@c_obj_name</span> 
+<a id="__codelineno-2-119" name="__codelineno-2-119" href="#__codelineno-2-119"></a>               AND log_level &lt;&gt; 0
+<a id="__codelineno-2-120" name="__codelineno-2-120" href="#__codelineno-2-120"></a>          END
+<a id="__codelineno-2-121" name="__codelineno-2-121" href="#__codelineno-2-121"></a>
+<a id="__codelineno-2-122" name="__codelineno-2-122" href="#__codelineno-2-122"></a>    -- LOG --
+<a id="__codelineno-2-123" name="__codelineno-2-123" href="#__codelineno-2-123"></a>    IF <span class="ni">@c_log_level</span> &gt;= 1 -- 1 = Info, 2 = Debug
+<a id="__codelineno-2-124" name="__codelineno-2-124" href="#__codelineno-2-124"></a>        BEGIN
+<a id="__codelineno-2-125" name="__codelineno-2-125" href="#__codelineno-2-125"></a>            INSERT INTO t<span class="ge">_log (wh_</span>id, source, user_id, message_text)
+<a id="__codelineno-2-126" name="__codelineno-2-126" href="#__codelineno-2-126"></a>            SELECT <span class="ni">@in_wh_id</span>, <span class="ni">@c_obj_name</span>, <span class="ni">@in_user_id</span>, EventInfo
+<a id="__codelineno-2-127" name="__codelineno-2-127" href="#__codelineno-2-127"></a>              FROM <span class="ni">@t_buffer</span> 
+<a id="__codelineno-2-128" name="__codelineno-2-128" href="#__codelineno-2-128"></a>          END
+<a id="__codelineno-2-129" name="__codelineno-2-129" href="#__codelineno-2-129"></a>    -- LOG --
+<a id="__codelineno-2-130" name="__codelineno-2-130" href="#__codelineno-2-130"></a>
+<a id="__codelineno-2-131" name="__codelineno-2-131" href="#__codelineno-2-131"></a>    ------------------------------------------------------------------------------------
+<a id="__codelineno-2-132" name="__codelineno-2-132" href="#__codelineno-2-132"></a>    -- Section Title
+<a id="__codelineno-2-133" name="__codelineno-2-133" href="#__codelineno-2-133"></a>    ------------------------------------------------------------------------------------
+<a id="__codelineno-2-134" name="__codelineno-2-134" href="#__codelineno-2-134"></a>
+<a id="__codelineno-2-135" name="__codelineno-2-135" href="#__codelineno-2-135"></a>    -- Non-transactional sproc logic here
+<a id="__codelineno-2-136" name="__codelineno-2-136" href="#__codelineno-2-136"></a>
+<a id="__codelineno-2-137" name="__codelineno-2-137" href="#__codelineno-2-137"></a>    ------------------------------------------------------------------------------------
+<a id="__codelineno-2-138" name="__codelineno-2-138" href="#__codelineno-2-138"></a>    -- Example Code
+<a id="__codelineno-2-139" name="__codelineno-2-139" href="#__codelineno-2-139"></a>    ------------------------------------------------------------------------------------
+<a id="__codelineno-2-140" name="__codelineno-2-140" href="#__codelineno-2-140"></a>
+<a id="__codelineno-2-141" name="__codelineno-2-141" href="#__codelineno-2-141"></a>    -- The following are examples of how and why to use a temporary table
+<a id="__codelineno-2-142" name="__codelineno-2-142" href="#__codelineno-2-142"></a>    --      1. not have to hit the database table again
+<a id="__codelineno-2-143" name="__codelineno-2-143" href="#__codelineno-2-143"></a>    --      2. allows you to maintain a single statement grabbing data and filling variables
+<a id="__codelineno-2-144" name="__codelineno-2-144" href="#__codelineno-2-144"></a>    --      3. easily debug by writing the results to the t_log table during development/runtime (see below).
+<a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a>
+<a id="__codelineno-2-146" name="__codelineno-2-146" href="#__codelineno-2-146"></a>    -- How to use <span class="ni">@error_tag</span>
+<a id="__codelineno-2-147" name="__codelineno-2-147" href="#__codelineno-2-147"></a>    --      1. Be sure to set a unique <span class="ni">@error_tag</span> before each statement
+<a id="__codelineno-2-148" name="__codelineno-2-148" href="#__codelineno-2-148"></a>    --      2. This way when something fails this <span class="ni">@error_tag</span> will show up in t<span class="ge">_error_</span>log
+<a id="__codelineno-2-149" name="__codelineno-2-149" href="#__codelineno-2-149"></a>    --      3. You can then search for the text and know exactly the statement in error
+<a id="__codelineno-2-150" name="__codelineno-2-150" href="#__codelineno-2-150"></a>
+<a id="__codelineno-2-151" name="__codelineno-2-151" href="#__codelineno-2-151"></a>    SET <span class="ni">@error_tag</span> = &#39;fill <span class="ni">#tmp_sto_on_fork</span>&#39;
+<a id="__codelineno-2-152" name="__codelineno-2-152" href="#__codelineno-2-152"></a>
+<a id="__codelineno-2-153" name="__codelineno-2-153" href="#__codelineno-2-153"></a>    SELECT wh_id, location_id, hu_id, item_number, lot_number, actual_qty, status, type
+<a id="__codelineno-2-154" name="__codelineno-2-154" href="#__codelineno-2-154"></a>    INTO <span class="ni">#tmp_sto_on_fork</span>
+<a id="__codelineno-2-155" name="__codelineno-2-155" href="#__codelineno-2-155"></a>    FROM t<span class="ge">_stored_</span>item WITH (NOLOCK)
+<a id="__codelineno-2-156" name="__codelineno-2-156" href="#__codelineno-2-156"></a>    WHERE wh_id = <span class="ni">@in_wh_id</span>
+<a id="__codelineno-2-157" name="__codelineno-2-157" href="#__codelineno-2-157"></a>        AND location_id = <span class="ni">@in_location_id</span>
+<a id="__codelineno-2-158" name="__codelineno-2-158" href="#__codelineno-2-158"></a>
+<a id="__codelineno-2-159" name="__codelineno-2-159" href="#__codelineno-2-159"></a>    -- Now that you have a table in memory you can do a ton without the the data changing or having to hit the database again.
+<a id="__codelineno-2-160" name="__codelineno-2-160" href="#__codelineno-2-160"></a>
+<a id="__codelineno-2-161" name="__codelineno-2-161" href="#__codelineno-2-161"></a>    -- Example of setting variables to use if/when needed and only having to maintain the statement above
+<a id="__codelineno-2-162" name="__codelineno-2-162" href="#__codelineno-2-162"></a>    SET <span class="ni">@error_tag</span> = &#39;set variables from <span class="ni">#tmp_sto_on_fork</span>&#39;
+<a id="__codelineno-2-163" name="__codelineno-2-163" href="#__codelineno-2-163"></a>
+<a id="__codelineno-2-164" name="__codelineno-2-164" href="#__codelineno-2-164"></a>    SELECT TOP 1
+<a id="__codelineno-2-165" name="__codelineno-2-165" href="#__codelineno-2-165"></a>         <span class="ni">@hu_id</span> = hu_id
+<a id="__codelineno-2-166" name="__codelineno-2-166" href="#__codelineno-2-166"></a>    FROM <span class="ni">#tmp_sto_on_fork</span>
+<a id="__codelineno-2-167" name="__codelineno-2-167" href="#__codelineno-2-167"></a>
+<a id="__codelineno-2-168" name="__codelineno-2-168" href="#__codelineno-2-168"></a>    -- Logging debug results this way speeds up development AND you can turn back on in production to troubleshoot an issue.
+<a id="__codelineno-2-169" name="__codelineno-2-169" href="#__codelineno-2-169"></a>    -- LOG --
+<a id="__codelineno-2-170" name="__codelineno-2-170" href="#__codelineno-2-170"></a>    IF <span class="ni">@c_log_level</span> &gt;= 2 -- 1 = Info, 2 = Debug
+<a id="__codelineno-2-171" name="__codelineno-2-171" href="#__codelineno-2-171"></a>        INSERT INTO t<span class="ge">_log (wh_</span>id, source, user_id, message_text)
+<a id="__codelineno-2-172" name="__codelineno-2-172" href="#__codelineno-2-172"></a>            SELECT <span class="ni">@in_wh_id</span>, <span class="ni">@c_obj_name</span>, <span class="ni">@in_ww_username</span>,
+<a id="__codelineno-2-173" name="__codelineno-2-173" href="#__codelineno-2-173"></a>                &#39;#tmp_sto_on_fork: &#39;
+<a id="__codelineno-2-174" name="__codelineno-2-174" href="#__codelineno-2-174"></a>                + &#39;wh_id [&#39; + wh_id + &#39;]&#39;
+<a id="__codelineno-2-175" name="__codelineno-2-175" href="#__codelineno-2-175"></a>                + &#39;, location_id [&#39; + location_id + &#39;]&#39;
+<a id="__codelineno-2-176" name="__codelineno-2-176" href="#__codelineno-2-176"></a>                + &#39;, hu_id [&#39; + ISNULL(hu_id, &#39;(NULL)&#39;) + &#39;]&#39;
+<a id="__codelineno-2-177" name="__codelineno-2-177" href="#__codelineno-2-177"></a>                + &#39;, item_number [&#39; + item_number + &#39;]&#39;
+<a id="__codelineno-2-178" name="__codelineno-2-178" href="#__codelineno-2-178"></a>                + &#39;, lot_number [&#39; + ISNULL(lot_number, &#39;(NULL)&#39;) + &#39;]&#39;
+<a id="__codelineno-2-179" name="__codelineno-2-179" href="#__codelineno-2-179"></a>                + &#39;, actual_qty [&#39; + CAST(actual_qty AS VARCHAR) + &#39;]&#39;
+<a id="__codelineno-2-180" name="__codelineno-2-180" href="#__codelineno-2-180"></a>                + &#39;, status [&#39; + status + &#39;]&#39;
+<a id="__codelineno-2-181" name="__codelineno-2-181" href="#__codelineno-2-181"></a>                + &#39;, type [&#39; + type + &#39;]&#39;
+<a id="__codelineno-2-182" name="__codelineno-2-182" href="#__codelineno-2-182"></a>            FROM <span class="ni">#tmp_sto_on_fork</span>
+<a id="__codelineno-2-183" name="__codelineno-2-183" href="#__codelineno-2-183"></a>    -- LOG --
+<a id="__codelineno-2-184" name="__codelineno-2-184" href="#__codelineno-2-184"></a>
+<a id="__codelineno-2-185" name="__codelineno-2-185" href="#__codelineno-2-185"></a>    -- DEV NOTES:
+<a id="__codelineno-2-186" name="__codelineno-2-186" href="#__codelineno-2-186"></a>    -- The following code to the CATCH block is the standard we use for handling code inside transaction.
+<a id="__codelineno-2-187" name="__codelineno-2-187" href="#__codelineno-2-187"></a>    -- If you don&#39;t have any code that belongs in a transaction, or you don&#39;t need to record a tran_log record,
+<a id="__codelineno-2-188" name="__codelineno-2-188" href="#__codelineno-2-188"></a>    -- delete everything from the BEGIN to the END TRAN comment.
+<a id="__codelineno-2-189" name="__codelineno-2-189" href="#__codelineno-2-189"></a>
+<a id="__codelineno-2-190" name="__codelineno-2-190" href="#__codelineno-2-190"></a>    ----------------
+<a id="__codelineno-2-191" name="__codelineno-2-191" href="#__codelineno-2-191"></a>    -- BEGIN TRAN --
+<a id="__codelineno-2-192" name="__codelineno-2-192" href="#__codelineno-2-192"></a>    ----------------
+<a id="__codelineno-2-193" name="__codelineno-2-193" href="#__codelineno-2-193"></a>
+<a id="__codelineno-2-194" name="__codelineno-2-194" href="#__codelineno-2-194"></a>    SET <span class="ni">@error_tag</span> = &#39;starting tran&#39;;
+<a id="__codelineno-2-195" name="__codelineno-2-195" href="#__codelineno-2-195"></a>
+<a id="__codelineno-2-196" name="__codelineno-2-196" href="#__codelineno-2-196"></a>    IF <span class="ni">@starting_tran_count</span> = 0
+<a id="__codelineno-2-197" name="__codelineno-2-197" href="#__codelineno-2-197"></a>    BEGIN
+<a id="__codelineno-2-198" name="__codelineno-2-198" href="#__codelineno-2-198"></a>        SET <span class="ni">@internal_tran</span> = &#39;YES&#39;
+<a id="__codelineno-2-199" name="__codelineno-2-199" href="#__codelineno-2-199"></a>        BEGIN TRAN
+<a id="__codelineno-2-200" name="__codelineno-2-200" href="#__codelineno-2-200"></a>    END
+<a id="__codelineno-2-201" name="__codelineno-2-201" href="#__codelineno-2-201"></a>
+<a id="__codelineno-2-202" name="__codelineno-2-202" href="#__codelineno-2-202"></a>        ------------------------------------------------------------------------------------
+<a id="__codelineno-2-203" name="__codelineno-2-203" href="#__codelineno-2-203"></a>        -- Section Title
+<a id="__codelineno-2-204" name="__codelineno-2-204" href="#__codelineno-2-204"></a>        ------------------------------------------------------------------------------------
+<a id="__codelineno-2-205" name="__codelineno-2-205" href="#__codelineno-2-205"></a>
+<a id="__codelineno-2-206" name="__codelineno-2-206" href="#__codelineno-2-206"></a>        -- Transactional sproc logic here.
+<a id="__codelineno-2-207" name="__codelineno-2-207" href="#__codelineno-2-207"></a>
+<a id="__codelineno-2-208" name="__codelineno-2-208" href="#__codelineno-2-208"></a>        /* uncomment the following when a transaction is needed.
+<a id="__codelineno-2-209" name="__codelineno-2-209" href="#__codelineno-2-209"></a>
+<a id="__codelineno-2-210" name="__codelineno-2-210" href="#__codelineno-2-210"></a>        ------------------------------------------------------------------------------------
+<a id="__codelineno-2-211" name="__codelineno-2-211" href="#__codelineno-2-211"></a>        -- Generate Transaction
+<a id="__codelineno-2-212" name="__codelineno-2-212" href="#__codelineno-2-212"></a>        ------------------------------------------------------------------------------------
+<a id="__codelineno-2-213" name="__codelineno-2-213" href="#__codelineno-2-213"></a>
+<a id="__codelineno-2-214" name="__codelineno-2-214" href="#__codelineno-2-214"></a>        SET <span class="ni">@error_tag</span> = &#39;get tran desc&#39;
+<a id="__codelineno-2-215" name="__codelineno-2-215" href="#__codelineno-2-215"></a>
+<a id="__codelineno-2-216" name="__codelineno-2-216" href="#__codelineno-2-216"></a>        DECLARE
+<a id="__codelineno-2-217" name="__codelineno-2-217" href="#__codelineno-2-217"></a>             <span class="ni">@tran_type</span>             NVARCHAR(3) = &#39;999&#39;
+<a id="__codelineno-2-218" name="__codelineno-2-218" href="#__codelineno-2-218"></a>            ,@tran_desc             NVARCHAR(50)
+<a id="__codelineno-2-219" name="__codelineno-2-219" href="#__codelineno-2-219"></a>
+<a id="__codelineno-2-220" name="__codelineno-2-220" href="#__codelineno-2-220"></a>        -- Get Transaction Description
+<a id="__codelineno-2-221" name="__codelineno-2-221" href="#__codelineno-2-221"></a>        SELECT <span class="ni">@tran_desc</span> = description FROM t<span class="ge">_transaction WITH (NOLOCK) WHERE system_</span>id = &#39;WA&#39; AND tran_type = <span class="ni">@tran_type</span> 
+<a id="__codelineno-2-222" name="__codelineno-2-222" href="#__codelineno-2-222"></a>
+<a id="__codelineno-2-223" name="__codelineno-2-223" href="#__codelineno-2-223"></a>        IF <span class="ni">@tran_desc</span> IS NULL
+<a id="__codelineno-2-224" name="__codelineno-2-224" href="#__codelineno-2-224"></a>            SET <span class="ni">@tran_desc</span> = &#39;Undefined in t_transaction&#39;
+<a id="__codelineno-2-225" name="__codelineno-2-225" href="#__codelineno-2-225"></a>
+<a id="__codelineno-2-226" name="__codelineno-2-226" href="#__codelineno-2-226"></a>        SELECT <span class="ni">@tran_end</span> = GETDATE()
+<a id="__codelineno-2-227" name="__codelineno-2-227" href="#__codelineno-2-227"></a>
+<a id="__codelineno-2-228" name="__codelineno-2-228" href="#__codelineno-2-228"></a>        SET <span class="ni">@error_tag</span> = &#39;insert t<span class="ge">_tran_</span>log_holding&#39;
+<a id="__codelineno-2-229" name="__codelineno-2-229" href="#__codelineno-2-229"></a>
+<a id="__codelineno-2-230" name="__codelineno-2-230" href="#__codelineno-2-230"></a>        -- Insert into the holding table and the background process in WA PROCESSORS will move it to t<span class="ge">_tran_</span>log
+<a id="__codelineno-2-231" name="__codelineno-2-231" href="#__codelineno-2-231"></a>        INSERT INTO t<span class="ge">_tran_</span>log_holding
+<a id="__codelineno-2-232" name="__codelineno-2-232" href="#__codelineno-2-232"></a>            (tran_type
+<a id="__codelineno-2-233" name="__codelineno-2-233" href="#__codelineno-2-233"></a>            ,description
+<a id="__codelineno-2-234" name="__codelineno-2-234" href="#__codelineno-2-234"></a>            ,start_tran_date
+<a id="__codelineno-2-235" name="__codelineno-2-235" href="#__codelineno-2-235"></a>            ,start_tran_time
+<a id="__codelineno-2-236" name="__codelineno-2-236" href="#__codelineno-2-236"></a>            ,end_tran_date
+<a id="__codelineno-2-237" name="__codelineno-2-237" href="#__codelineno-2-237"></a>            ,end_tran_time
+<a id="__codelineno-2-238" name="__codelineno-2-238" href="#__codelineno-2-238"></a>            ,employee_id
+<a id="__codelineno-2-239" name="__codelineno-2-239" href="#__codelineno-2-239"></a>            ,control_number
+<a id="__codelineno-2-240" name="__codelineno-2-240" href="#__codelineno-2-240"></a>            ,line_number
+<a id="__codelineno-2-241" name="__codelineno-2-241" href="#__codelineno-2-241"></a>            ,contusp_aaa_function_template_for_visionrol_number_2
+<a id="__codelineno-2-242" name="__codelineno-2-242" href="#__codelineno-2-242"></a>            ,outside_id
+<a id="__codelineno-2-243" name="__codelineno-2-243" href="#__codelineno-2-243"></a>            ,wh_id
+<a id="__codelineno-2-244" name="__codelineno-2-244" href="#__codelineno-2-244"></a>            ,location_id
+<a id="__codelineno-2-245" name="__codelineno-2-245" href="#__codelineno-2-245"></a>            ,hu_id
+<a id="__codelineno-2-246" name="__codelineno-2-246" href="#__codelineno-2-246"></a>            ,num_items
+<a id="__codelineno-2-247" name="__codelineno-2-247" href="#__codelineno-2-247"></a>            ,item_number
+<a id="__codelineno-2-248" name="__codelineno-2-248" href="#__codelineno-2-248"></a>            ,lot_number
+<a id="__codelineno-2-249" name="__codelineno-2-249" href="#__codelineno-2-249"></a>            ,uom
+<a id="__codelineno-2-250" name="__codelineno-2-250" href="#__codelineno-2-250"></a>            ,tran_qty
+<a id="__codelineno-2-251" name="__codelineno-2-251" href="#__codelineno-2-251"></a>            ,wh_id_2
+<a id="__codelineno-2-252" name="__codelineno-2-252" href="#__codelineno-2-252"></a>            ,location_id_2
+<a id="__codelineno-2-253" name="__codelineno-2-253" href="#__codelineno-2-253"></a>            ,verify_status
+<a id="__codelineno-2-254" name="__codelineno-2-254" href="#__codelineno-2-254"></a>            ,employee_id_2
+<a id="__codelineno-2-255" name="__codelineno-2-255" href="#__codelineno-2-255"></a>            ,routing_code
+<a id="__codelineno-2-256" name="__codelineno-2-256" href="#__codelineno-2-256"></a>            ,hu_id_2
+<a id="__codelineno-2-257" name="__codelineno-2-257" href="#__codelineno-2-257"></a>            ,elapsed_time
+<a id="__codelineno-2-258" name="__codelineno-2-258" href="#__codelineno-2-258"></a>            ,sys_device
+<a id="__codelineno-2-259" name="__codelineno-2-259" href="#__codelineno-2-259"></a>            ,calling_procedure
+<a id="__codelineno-2-260" name="__codelineno-2-260" href="#__codelineno-2-260"></a>            ,menu_process
+<a id="__codelineno-2-261" name="__codelineno-2-261" href="#__codelineno-2-261"></a>            )
+<a id="__codelineno-2-262" name="__codelineno-2-262" href="#__codelineno-2-262"></a>        SELECT 
+<a id="__codelineno-2-263" name="__codelineno-2-263" href="#__codelineno-2-263"></a>             <span class="ni">@tran_type</span>      --tran_type
+<a id="__codelineno-2-264" name="__codelineno-2-264" href="#__codelineno-2-264"></a>            ,@tran_desc      --description
+<a id="__codelineno-2-265" name="__codelineno-2-265" href="#__codelineno-2-265"></a>            ,CONVERT(DATE, <span class="ni">@in_tran_start</span>)          --start_tran_date
+<a id="__codelineno-2-266" name="__codelineno-2-266" href="#__codelineno-2-266"></a>            ,CONVERT(TIME, <span class="ni">@in_tran_start</span>)          --start_tran_time
+<a id="__codelineno-2-267" name="__codelineno-2-267" href="#__codelineno-2-267"></a>            ,CONVERT(DATE, <span class="ni">@tran_end</span>)               --end_tran_date
+<a id="__codelineno-2-268" name="__codelineno-2-268" href="#__codelineno-2-268"></a>            ,CONVERT(TIME, <span class="ni">@tran_end</span>)               --end_tran_time
+<a id="__codelineno-2-269" name="__codelineno-2-269" href="#__codelineno-2-269"></a>            ,@in_ww_username    --employee_id
+<a id="__codelineno-2-270" name="__codelineno-2-270" href="#__codelineno-2-270"></a>            ,NULL               --control_number
+<a id="__codelineno-2-271" name="__codelineno-2-271" href="#__codelineno-2-271"></a>            ,0                  --line_number
+<a id="__codelineno-2-272" name="__codelineno-2-272" href="#__codelineno-2-272"></a>            ,NULL               --control_number_2
+<a id="__codelineno-2-273" name="__codelineno-2-273" href="#__codelineno-2-273"></a>            ,NULL               --outside_id
+<a id="__codelineno-2-274" name="__codelineno-2-274" href="#__codelineno-2-274"></a>            ,@in_wh_id          --wh_id (source)
+<a id="__codelineno-2-275" name="__codelineno-2-275" href="#__codelineno-2-275"></a>            ,NULL               --location_id (source)
+<a id="__codelineno-2-276" name="__codelineno-2-276" href="#__codelineno-2-276"></a>            ,NULL               --hu_id (source)
+<a id="__codelineno-2-277" name="__codelineno-2-277" href="#__codelineno-2-277"></a>            ,NULL               --num_items
+<a id="__codelineno-2-278" name="__codelineno-2-278" href="#__codelineno-2-278"></a>            ,NULL               --item_number
+<a id="__codelineno-2-279" name="__codelineno-2-279" href="#__codelineno-2-279"></a>            ,NULL               --lot_number
+<a id="__codelineno-2-280" name="__codelineno-2-280" href="#__codelineno-2-280"></a>            ,NULL               --UOM
+<a id="__codelineno-2-281" name="__codelineno-2-281" href="#__codelineno-2-281"></a>            ,0                  --tran_qty
+<a id="__codelineno-2-282" name="__codelineno-2-282" href="#__codelineno-2-282"></a>            ,NULL               --wh_id_2 (dest)
+<a id="__codelineno-2-283" name="__codelineno-2-283" href="#__codelineno-2-283"></a>            ,NULL               --location_id_2 (dest)
+<a id="__codelineno-2-284" name="__codelineno-2-284" href="#__codelineno-2-284"></a>            ,NULL               --verify_status
+<a id="__codelineno-2-285" name="__codelineno-2-285" href="#__codelineno-2-285"></a>            ,NULL               --employee_id_2
+<a id="__codelineno-2-286" name="__codelineno-2-286" href="#__codelineno-2-286"></a>            ,NULL               --routing_code
+<a id="__codelineno-2-287" name="__codelineno-2-287" href="#__codelineno-2-287"></a>            ,NULL               --hu_id_2 (dest)
+<a id="__codelineno-2-288" name="__codelineno-2-288" href="#__codelineno-2-288"></a>            ,DATEDIFF(ss, <span class="ni">@in_tran_start</span>, <span class="ni">@tran_end</span>) AS elapsed     --elapsed_time
+<a id="__codelineno-2-289" name="__codelineno-2-289" href="#__codelineno-2-289"></a>            ,NULL    --sys_device
+<a id="__codelineno-2-290" name="__codelineno-2-290" href="#__codelineno-2-290"></a>            ,@c_obj_name        --calling_procedure
+<a id="__codelineno-2-291" name="__codelineno-2-291" href="#__codelineno-2-291"></a>            ,c_called_from      --menu_process
+<a id="__codelineno-2-292" name="__codelineno-2-292" href="#__codelineno-2-292"></a>        */
+<a id="__codelineno-2-293" name="__codelineno-2-293" href="#__codelineno-2-293"></a>
+<a id="__codelineno-2-294" name="__codelineno-2-294" href="#__codelineno-2-294"></a>        SET <span class="ni">@row_count</span> = @@ROWCOUNT
+<a id="__codelineno-2-295" name="__codelineno-2-295" href="#__codelineno-2-295"></a>
+<a id="__codelineno-2-296" name="__codelineno-2-296" href="#__codelineno-2-296"></a>        IF <span class="ni">@in_debug</span> = &#39;YES&#39;
+<a id="__codelineno-2-297" name="__codelineno-2-297" href="#__codelineno-2-297"></a>            SELECT * FROM t<span class="ge">_tran_</span>log_holding WITH (NOLOCK) WHERE tran_log_holding_id = @@IDENTITY
+<a id="__codelineno-2-298" name="__codelineno-2-298" href="#__codelineno-2-298"></a>
+<a id="__codelineno-2-299" name="__codelineno-2-299" href="#__codelineno-2-299"></a>    IF <span class="ni">@starting_tran_count</span> = 0
+<a id="__codelineno-2-300" name="__codelineno-2-300" href="#__codelineno-2-300"></a>        COMMIT TRAN
+<a id="__codelineno-2-301" name="__codelineno-2-301" href="#__codelineno-2-301"></a>
+<a id="__codelineno-2-302" name="__codelineno-2-302" href="#__codelineno-2-302"></a>    ----------------
+<a id="__codelineno-2-303" name="__codelineno-2-303" href="#__codelineno-2-303"></a>    --  END TRAN  --
+<a id="__codelineno-2-304" name="__codelineno-2-304" href="#__codelineno-2-304"></a>    ----------------
+<a id="__codelineno-2-305" name="__codelineno-2-305" href="#__codelineno-2-305"></a>
+<a id="__codelineno-2-306" name="__codelineno-2-306" href="#__codelineno-2-306"></a>    SET <span class="ni">@out_msg</span> = &#39; Tran Log records inserted [&#39; + CAST(ISNULL(@row_count,0) AS VARCHAR) + &#39;].&#39;
+<a id="__codelineno-2-307" name="__codelineno-2-307" href="#__codelineno-2-307"></a>
+<a id="__codelineno-2-308" name="__codelineno-2-308" href="#__codelineno-2-308"></a>END TRY
+<a id="__codelineno-2-309" name="__codelineno-2-309" href="#__codelineno-2-309"></a>BEGIN CATCH
+<a id="__codelineno-2-310" name="__codelineno-2-310" href="#__codelineno-2-310"></a>
+<a id="__codelineno-2-311" name="__codelineno-2-311" href="#__codelineno-2-311"></a>    IF <span class="ni">@starting_tran_count</span> = 0 AND <span class="ni">@internal_tran</span> = &#39;YES&#39;
+<a id="__codelineno-2-312" name="__codelineno-2-312" href="#__codelineno-2-312"></a>    ROLLBACK TRAN
+<a id="__codelineno-2-313" name="__codelineno-2-313" href="#__codelineno-2-313"></a>
+<a id="__codelineno-2-314" name="__codelineno-2-314" href="#__codelineno-2-314"></a>    SELECT <span class="ni">@program_name</span> = program_name FROM sys.dm_exec_sessions WHERE Session_id = @@SPID
+<a id="__codelineno-2-315" name="__codelineno-2-315" href="#__codelineno-2-315"></a>
+<a id="__codelineno-2-316" name="__codelineno-2-316" href="#__codelineno-2-316"></a>    INSERT INTO <span class="ni">@t_buffer</span> ( EventType, Parms, EventInfo )
+<a id="__codelineno-2-317" name="__codelineno-2-317" href="#__codelineno-2-317"></a>    EXEC (&#39;DBCC INPUTBUFFER(@@SPID)&#39;)
+<a id="__codelineno-2-318" name="__codelineno-2-318" href="#__codelineno-2-318"></a>
+<a id="__codelineno-2-319" name="__codelineno-2-319" href="#__codelineno-2-319"></a>    SELECT <span class="ni">@call_string</span> = EventInfo FROM <span class="ni">@t_buffer</span>
+<a id="__codelineno-2-320" name="__codelineno-2-320" href="#__codelineno-2-320"></a>
+<a id="__codelineno-2-321" name="__codelineno-2-321" href="#__codelineno-2-321"></a>    SELECT
+<a id="__codelineno-2-322" name="__codelineno-2-322" href="#__codelineno-2-322"></a>        <span class="ni">@error_number</span>    = ERROR_NUMBER(),
+<a id="__codelineno-2-323" name="__codelineno-2-323" href="#__codelineno-2-323"></a>        <span class="ni">@error_severity</span>  = ERROR_SEVERITY(),
+<a id="__codelineno-2-324" name="__codelineno-2-324" href="#__codelineno-2-324"></a>        <span class="ni">@error_state</span>     = ERROR_STATE(),
+<a id="__codelineno-2-325" name="__codelineno-2-325" href="#__codelineno-2-325"></a>        <span class="ni">@error_line</span>      = ERROR_LINE(),
+<a id="__codelineno-2-326" name="__codelineno-2-326" href="#__codelineno-2-326"></a>        <span class="ni">@error_message</span> = &#39;Sproc <span class="ni">@error_tag</span> = [&#39; + <span class="ni">@error_tag</span> + &#39;], ERROR_MESSAGE() = &#39; + ERROR_MESSAGE()
+<a id="__codelineno-2-327" name="__codelineno-2-327" href="#__codelineno-2-327"></a>
+<a id="__codelineno-2-328" name="__codelineno-2-328" href="#__codelineno-2-328"></a>    INSERT INTO t<span class="ge">_error_</span>log
+<a id="__codelineno-2-329" name="__codelineno-2-329" href="#__codelineno-2-329"></a>    (
+<a id="__codelineno-2-330" name="__codelineno-2-330" href="#__codelineno-2-330"></a>        error_number,
+<a id="__codelineno-2-331" name="__codelineno-2-331" href="#__codelineno-2-331"></a>        error_severity,
+<a id="__codelineno-2-332" name="__codelineno-2-332" href="#__codelineno-2-332"></a>        error_state,
+<a id="__codelineno-2-333" name="__codelineno-2-333" href="#__codelineno-2-333"></a>        error_procedure,
+<a id="__codelineno-2-334" name="__codelineno-2-334" href="#__codelineno-2-334"></a>        error_line,
+<a id="__codelineno-2-335" name="__codelineno-2-335" href="#__codelineno-2-335"></a>        error_message,
+<a id="__codelineno-2-336" name="__codelineno-2-336" href="#__codelineno-2-336"></a>        username,
+<a id="__codelineno-2-337" name="__codelineno-2-337" href="#__codelineno-2-337"></a>        type,
+<a id="__codelineno-2-338" name="__codelineno-2-338" href="#__codelineno-2-338"></a>        call_string,
+<a id="__codelineno-2-339" name="__codelineno-2-339" href="#__codelineno-2-339"></a>        called_from
+<a id="__codelineno-2-340" name="__codelineno-2-340" href="#__codelineno-2-340"></a>    )
+<a id="__codelineno-2-341" name="__codelineno-2-341" href="#__codelineno-2-341"></a>    SELECT
+<a id="__codelineno-2-342" name="__codelineno-2-342" href="#__codelineno-2-342"></a>        <span class="ni">@error_number</span>,
+<a id="__codelineno-2-343" name="__codelineno-2-343" href="#__codelineno-2-343"></a>        <span class="ni">@error_severity</span>,
+<a id="__codelineno-2-344" name="__codelineno-2-344" href="#__codelineno-2-344"></a>        <span class="ni">@error_state</span>,
+<a id="__codelineno-2-345" name="__codelineno-2-345" href="#__codelineno-2-345"></a>        <span class="ni">@c_obj_name</span>,
+<a id="__codelineno-2-346" name="__codelineno-2-346" href="#__codelineno-2-346"></a>        <span class="ni">@error_line</span>,
+<a id="__codelineno-2-347" name="__codelineno-2-347" href="#__codelineno-2-347"></a>        <span class="ni">@error_message</span>,
+<a id="__codelineno-2-348" name="__codelineno-2-348" href="#__codelineno-2-348"></a>        <span class="ni">@in_ww_username</span>,
+<a id="__codelineno-2-349" name="__codelineno-2-349" href="#__codelineno-2-349"></a>        &#39;WEBWISE&#39;, -- ARCHITECT, WEBWISE, JOB, VISION
+<a id="__codelineno-2-350" name="__codelineno-2-350" href="#__codelineno-2-350"></a>        <span class="ni">@call_string</span>,
+<a id="__codelineno-2-351" name="__codelineno-2-351" href="#__codelineno-2-351"></a>        <span class="ni">@c_called_from</span>
+<a id="__codelineno-2-352" name="__codelineno-2-352" href="#__codelineno-2-352"></a>
+<a id="__codelineno-2-353" name="__codelineno-2-353" href="#__codelineno-2-353"></a>    -- Set <span class="ni">@out_msg</span>
+<a id="__codelineno-2-354" name="__codelineno-2-354" href="#__codelineno-2-354"></a>    SET <span class="ni">@out_msg</span> = &#39;IN CATCH BLOCK: The last <span class="ni">@error_tag</span> set = [&#39; + <span class="ni">@error_tag</span> + &#39;], t<span class="ge">_error_</span>log.error_log_id = [&#39; + CAST(@@IDENTITY AS VARCHAR) + &#39;]&#39;
+<a id="__codelineno-2-355" name="__codelineno-2-355" href="#__codelineno-2-355"></a>    IF <span class="ni">@error_number</span> = 1205 -- add the deadlock counter
+<a id="__codelineno-2-356" name="__codelineno-2-356" href="#__codelineno-2-356"></a>        SET <span class="ni">@out_msg</span> = <span class="ni">@out_msg</span> + &#39;, DEADLOCKED with <span class="ni">@deadlock_retry</span> = [&#39; + CAST(@deadlock_retry AS VARCHAR) + &#39;]&#39;
+<a id="__codelineno-2-357" name="__codelineno-2-357" href="#__codelineno-2-357"></a>
+<a id="__codelineno-2-358" name="__codelineno-2-358" href="#__codelineno-2-358"></a>    -- LOG --
+<a id="__codelineno-2-359" name="__codelineno-2-359" href="#__codelineno-2-359"></a>    IF <span class="ni">@c_log_level</span> &gt;= 1 -- 1 = Info, 2 = Debug
+<a id="__codelineno-2-360" name="__codelineno-2-360" href="#__codelineno-2-360"></a>        INSERT INTO t<span class="ge">_log (wh_</span>id, source, user_id, message_text)
+<a id="__codelineno-2-361" name="__codelineno-2-361" href="#__codelineno-2-361"></a>            SELECT <span class="ni">@in_wh_id</span>, <span class="ni">@c_obj_name</span>, <span class="ni">@in_ww_username</span>,
+<a id="__codelineno-2-362" name="__codelineno-2-362" href="#__codelineno-2-362"></a>                &#39;@out_msg = [&#39; + <span class="ni">@out_msg</span> + &#39;]&#39;
+<a id="__codelineno-2-363" name="__codelineno-2-363" href="#__codelineno-2-363"></a>    -- LOG --
+<a id="__codelineno-2-364" name="__codelineno-2-364" href="#__codelineno-2-364"></a>
+<a id="__codelineno-2-365" name="__codelineno-2-365" href="#__codelineno-2-365"></a>    IF <span class="ni">@error_number</span> = 1205
+<a id="__codelineno-2-366" name="__codelineno-2-366" href="#__codelineno-2-366"></a>    BEGIN
+<a id="__codelineno-2-367" name="__codelineno-2-367" href="#__codelineno-2-367"></a>        IF <span class="ni">@deadlock_retry</span> &lt; 3
+<a id="__codelineno-2-368" name="__codelineno-2-368" href="#__codelineno-2-368"></a>        BEGIN
+<a id="__codelineno-2-369" name="__codelineno-2-369" href="#__codelineno-2-369"></a>            -- WAITFOR DELAY &#39;00:00:01&#39;
+<a id="__codelineno-2-370" name="__codelineno-2-370" href="#__codelineno-2-370"></a>            SET <span class="ni">@deadlock_retry</span> = <span class="ni">@deadlock_retry</span> + 1
+<a id="__codelineno-2-371" name="__codelineno-2-371" href="#__codelineno-2-371"></a>            GOTO START
+<a id="__codelineno-2-372" name="__codelineno-2-372" href="#__codelineno-2-372"></a>        END
+<a id="__codelineno-2-373" name="__codelineno-2-373" href="#__codelineno-2-373"></a>    END
+<a id="__codelineno-2-374" name="__codelineno-2-374" href="#__codelineno-2-374"></a>
+<a id="__codelineno-2-375" name="__codelineno-2-375" href="#__codelineno-2-375"></a>END CATCH
+<a id="__codelineno-2-376" name="__codelineno-2-376" href="#__codelineno-2-376"></a>
+<a id="__codelineno-2-377" name="__codelineno-2-377" href="#__codelineno-2-377"></a>------------------ Return to calling process ----------------------
+<a id="__codelineno-2-378" name="__codelineno-2-378" href="#__codelineno-2-378"></a>EXIT_LABEL:
+<a id="__codelineno-2-379" name="__codelineno-2-379" href="#__codelineno-2-379"></a>    RETURN
+<a id="__codelineno-2-380" name="__codelineno-2-380" href="#__codelineno-2-380"></a>GO
+<a id="__codelineno-2-381" name="__codelineno-2-381" href="#__codelineno-2-381"></a>
+<a id="__codelineno-2-382" name="__codelineno-2-382" href="#__codelineno-2-382"></a>PRINT &#39;&#39;
+<a id="__codelineno-2-383" name="__codelineno-2-383" href="#__codelineno-2-383"></a>PRINT &#39;Stored Procedure created&#39;
+<a id="__codelineno-2-384" name="__codelineno-2-384" href="#__codelineno-2-384"></a>GO
+<a id="__codelineno-2-385" name="__codelineno-2-385" href="#__codelineno-2-385"></a>
+<a id="__codelineno-2-386" name="__codelineno-2-386" href="#__codelineno-2-386"></a>GRANT EXECUTE ON dbo.usp_ADp1234_page_title_template_for_ww TO WA_USER, AAD_USER
+<a id="__codelineno-2-387" name="__codelineno-2-387" href="#__codelineno-2-387"></a>GO
+<a id="__codelineno-2-388" name="__codelineno-2-388" href="#__codelineno-2-388"></a>
+<a id="__codelineno-2-389" name="__codelineno-2-389" href="#__codelineno-2-389"></a>PRINT &#39;&#39;
+<a id="__codelineno-2-390" name="__codelineno-2-390" href="#__codelineno-2-390"></a>PRINT &#39;EXECUTE has been granted to WA_USER, AA_USER&#39;
+<a id="__codelineno-2-391" name="__codelineno-2-391" href="#__codelineno-2-391"></a>GO
+</code></pre></div>
+<hr />
+<h2 id="sql-formatting-examples">SQL Formatting Examples</h2>
+<h3 id="select-with-having">SELECT with HAVING</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">TOP</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">pick_id</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">              </span><span class="p">,</span><span class="n">order_number</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">              </span><span class="p">,</span><span class="n">status</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">          </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_pick_detail</span><span class="w"> </span><span class="k">WITH</span><span class="p">(</span><span class="n">NOLOCK</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">         </span><span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;RELEASED&#39;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">order_number</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">pick_id</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+</code></pre></div>
+<hr />
+<h3 id="update">UPDATE</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">t_fwd_pick</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span><span class="k">SET</span><span class="w"> </span><span class="n">wh_id</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;101&#39;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="p">,</span><span class="n">location_id</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="p">,</span><span class="n">item_number</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;ITEM_NUM&#39;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="p">,</span><span class="n">uom</span><span class="w">                       </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;EA&#39;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="p">,</span><span class="n">tolerance_percent</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;20&#39;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="p">,</span><span class="n">minimum_trigger_qty</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;20&#39;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="p">,</span><span class="n">maximum_replenishment_qty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;100&#39;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="p">,</span><span class="n">default_priority</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;10&#39;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="p">,</span><span class="n">calculate_qty_flag</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;N&#39;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="p">,</span><span class="n">stored_attribute_id</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="k">NULL</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">location_id</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+</code></pre></div>
+<hr />
+<h3 id="update-with-join">UPDATE with JOIN</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">fwd</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span><span class="k">SET</span><span class="w"> </span><span class="n">wh_id</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;101&#39;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="p">,</span><span class="n">location_id</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="p">,</span><span class="n">item_number</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;ITEM_NUM&#39;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="p">,</span><span class="n">uom</span><span class="w">                       </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;EA&#39;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="p">,</span><span class="n">tolerance_percent</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;20&#39;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">      </span><span class="p">,</span><span class="n">minimum_trigger_qty</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;20&#39;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="p">,</span><span class="n">maximum_replenishment_qty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;100&#39;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="p">,</span><span class="n">default_priority</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;10&#39;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="p">,</span><span class="n">calculate_qty_flag</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;N&#39;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="p">,</span><span class="n">stored_attribute_id</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="k">NULL</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_fwd_pick</span><span class="w"> </span><span class="n">fwd</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">t_location</span><span class="w"> </span><span class="n">loc</span><span class="w"> </span><span class="k">WITH</span><span class="p">(</span><span class="n">NOLOCK</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">location_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fwd</span><span class="p">.</span><span class="n">location_id</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">wh_id</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">fwd</span><span class="p">.</span><span class="n">wh_id</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">fwd</span><span class="p">.</span><span class="n">location_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+</code></pre></div>
+<hr />
+<h3 id="delete">DELETE</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_fwd_pick</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">      </span><span class="k">WHERE</span><span class="w"> </span><span class="n">location_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+</code></pre></div>
+<hr />
+<h3 id="delete-with-join">DELETE with JOIN</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="n">fwd</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_fwd_pick</span><span class="w"> </span><span class="n">fwd</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">t_location</span><span class="w"> </span><span class="n">loc</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">fwd</span><span class="p">.</span><span class="n">location_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">location_id</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">fwd</span><span class="p">.</span><span class="n">wh_id</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">wh_id</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">fwd</span><span class="p">.</span><span class="n">location_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+</code></pre></div>
+<hr />
+<h3 id="select-into">SELECT INTO</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">wh_id</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">      </span><span class="p">,</span><span class="n">location_id</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="p">,</span><span class="n">item_number</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="p">,</span><span class="n">uom</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="p">,</span><span class="n">tolerance_percent</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">      </span><span class="p">,</span><span class="n">minimum_trigger_qty</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="p">,</span><span class="n">maximum_replenishment_qty</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">      </span><span class="p">,</span><span class="n">default_priority</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="p">,</span><span class="n">calculate_qty_flag</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="p">,</span><span class="n">stored_attribute_id</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="k">INTO</span><span class="w"> </span><span class="o">#</span><span class="n">tmp_fwd_pick</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_fwd_pick</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">wh_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;101&#39;</span>
+</code></pre></div>
+<hr />
+<h3 id="insert">INSERT</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">t_fwd_pick</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">(</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">     </span><span class="n">wh_id</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="p">,</span><span class="n">location_id</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="p">,</span><span class="n">item_number</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">,</span><span class="n">uom</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="p">,</span><span class="n">tolerance_percent</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="p">,</span><span class="n">minimum_trigger_qty</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="p">,</span><span class="n">maximum_replenishment_qty</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">,</span><span class="n">default_priority</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="p">,</span><span class="n">calculate_qty_flag</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="p">,</span><span class="n">stored_attribute_id</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">)</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="k">VALUES</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">(</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">     </span><span class="n">N</span><span class="s1">&#39;101&#39;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;ITEM_NUM&#39;</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;EA&#39;</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;20&#39;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;20&#39;</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;100&#39;</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;10&#39;</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">    </span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;N&#39;</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">    </span><span class="p">,</span><span class="k">NULL</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="declare-set">DECLARE / SET</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">wh_id</span><span class="w">          </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">location_id</span><span class="w">    </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">item_number</span><span class="w">    </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">uom</span><span class="w">            </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">wh_id</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;101&#39;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">location_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;LOC-01&#39;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">item_number</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;ITEM_NUM&#39;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">uom</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;EA&#39;</span>
+</code></pre></div>
+<hr />
+<h3 id="select-with-joins-and-group-by">SELECT with JOINs and GROUP BY</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w">   </span><span class="n">loc</span><span class="p">.</span><span class="n">wh_id</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">        </span><span class="p">,</span><span class="n">loc</span><span class="p">.</span><span class="n">location_id</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="p">,</span><span class="n">loc</span><span class="p">.</span><span class="n">location_type</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="p">,</span><span class="n">itm</span><span class="p">.</span><span class="n">item_number</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="p">,</span><span class="n">itm</span><span class="p">.</span><span class="n">description</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="p">,</span><span class="k">COUNT</span><span class="p">(</span><span class="n">pk</span><span class="p">.</span><span class="n">pick_id</span><span class="p">)</span><span class="w">  </span><span class="k">AS</span><span class="w"> </span><span class="n">pick_count</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">pk</span><span class="p">.</span><span class="n">qty</span><span class="p">)</span><span class="w">        </span><span class="k">AS</span><span class="w"> </span><span class="n">total_qty</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_pick_detail</span><span class="w">   </span><span class="n">pk</span><span class="w">  </span><span class="k">WITH</span><span class="p">(</span><span class="n">NOLOCK</span><span class="p">)</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">t_location</span><span class="w">      </span><span class="n">loc</span><span class="w"> </span><span class="k">WITH</span><span class="p">(</span><span class="n">NOLOCK</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">location_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pk</span><span class="p">.</span><span class="n">location_id</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">                                         </span><span class="k">AND</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">wh_id</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">pk</span><span class="p">.</span><span class="n">wh_id</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">t_item_master</span><span class="w">   </span><span class="n">itm</span><span class="w"> </span><span class="k">WITH</span><span class="p">(</span><span class="n">NOLOCK</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">itm</span><span class="p">.</span><span class="n">item_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pk</span><span class="p">.</span><span class="n">item_number</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">   </span><span class="k">WHERE</span><span class="w"> </span><span class="n">pk</span><span class="p">.</span><span class="n">status</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;RELEASED&#39;</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">     </span><span class="k">AND</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">wh_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;101&#39;</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">wh_id</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">        </span><span class="p">,</span><span class="n">loc</span><span class="p">.</span><span class="n">location_id</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">        </span><span class="p">,</span><span class="n">loc</span><span class="p">.</span><span class="n">location_type</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="p">,</span><span class="n">itm</span><span class="p">.</span><span class="n">item_number</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">        </span><span class="p">,</span><span class="n">itm</span><span class="p">.</span><span class="n">description</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">loc</span><span class="p">.</span><span class="n">location_id</span>
+</code></pre></div>
+<hr />
+<h3 id="temp-table-create-drop">Temp Table CREATE / DROP</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">IF</span><span class="w"> </span><span class="n">OBJECT_ID</span><span class="p">(</span><span class="s1">&#39;tempdb..#tmp_fwd_pick&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">#</span><span class="n">tmp_fwd_pick</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">#</span><span class="n">tmp_fwd_pick</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">(</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">     </span><span class="n">wh_id</span><span class="w">                      </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">,</span><span class="n">location_id</span><span class="w">                </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="p">,</span><span class="n">item_number</span><span class="w">                </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="p">,</span><span class="n">uom</span><span class="w">                        </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="p">,</span><span class="n">tolerance_percent</span><span class="w">          </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="p">,</span><span class="n">minimum_trigger_qty</span><span class="w">        </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="p">,</span><span class="n">maximum_replenishment_qty</span><span class="w">  </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="p">,</span><span class="n">default_priority</span><span class="w">           </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="p">,</span><span class="n">calculate_qty_flag</span><span class="w">         </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="p">,</span><span class="n">stored_attribute_id</span><span class="w">        </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="while-loop">WHILE Loop</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">counter</span><span class="w">    </span><span class="nb">INT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="k">max</span><span class="w">        </span><span class="nb">INT</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="k">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">#</span><span class="n">tmp_fwd_pick</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">WHILE</span><span class="w"> </span><span class="o">@</span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="o">@</span><span class="k">max</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="k">BEGIN</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="c1">-- logic here</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="n">counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="k">END</span>
+</code></pre></div>
+<hr />
+<h3 id="cursor">Cursor</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">wh_id</span><span class="w">          </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">location_id</span><span class="w">    </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">DECLARE</span><span class="w"> </span><span class="n">cur_locations</span><span class="w"> </span><span class="k">CURSOR</span><span class="w"> </span><span class="k">FOR</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">wh_id</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">          </span><span class="p">,</span><span class="n">location_id</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">      </span><span class="k">FROM</span><span class="w"> </span><span class="o">#</span><span class="n">tmp_fwd_pick</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="k">OPEN</span><span class="w"> </span><span class="n">cur_locations</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="k">FETCH</span><span class="w"> </span><span class="k">NEXT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cur_locations</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">@</span><span class="n">wh_id</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">location_id</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="n">WHILE</span><span class="w"> </span><span class="o">@@</span><span class="n">FETCH_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="k">BEGIN</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span><span class="c1">-- logic here</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">    </span><span class="k">FETCH</span><span class="w"> </span><span class="k">NEXT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cur_locations</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">@</span><span class="n">wh_id</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">location_id</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="k">END</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="k">CLOSE</span><span class="w"> </span><span class="n">cur_locations</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="k">DEALLOCATE</span><span class="w"> </span><span class="n">cur_locations</span>
+</code></pre></div>
+<hr />
+<h3 id="execute">EXECUTE</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">return_value</span><span class="w"> </span><span class="nb">INT</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">EXEC</span><span class="w"> </span><span class="o">@</span><span class="n">return_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">usp_ProcedureName</span><span class="p">]</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">     </span><span class="o">@</span><span class="n">Param1</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;Value1&#39;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="p">,</span><span class="o">@</span><span class="n">Param2</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;Value2&#39;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">return_value</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ReturnValue</span>
+</code></pre></div>
+<hr />
+<h3 id="execute-from-advantage-architect">EXECUTE from Advantage Architect</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">STATEMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">usp_ProcedureName</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">RETURNS</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">return_value</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="o">@</span><span class="n">Param1</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">Value1</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="o">@</span><span class="n">Param2</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">Value2</span>
+</code></pre></div>
+<hr />
+<h3 id="union-all">UNION ALL</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">wh_id</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">      </span><span class="p">,</span><span class="n">location_id</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">      </span><span class="p">,</span><span class="n">item_number</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">      </span><span class="p">,</span><span class="n">status</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_pick_detail</span><span class="w"> </span><span class="k">WITH</span><span class="p">(</span><span class="n">NOLOCK</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;RELEASED&#39;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">wh_id</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">      </span><span class="p">,</span><span class="n">location_id</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">      </span><span class="p">,</span><span class="n">item_number</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">      </span><span class="p">,</span><span class="n">status</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">t_pick_detail</span><span class="w"> </span><span class="k">WITH</span><span class="p">(</span><span class="n">NOLOCK</span><span class="p">)</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;COMPLETE&#39;</span>
+</code></pre></div>
+```</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
