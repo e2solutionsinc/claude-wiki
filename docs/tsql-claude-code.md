@@ -16,33 +16,35 @@ It also lets you work directly on `.sql` files. Claude Code can read, write, and
 
 ### Step 1 — Create the folder structure
 
-Create a dedicated folder for the customer or project. Keep each customer in their own folder so their `CLAUDE.md` context stays isolated.
+Create a dedicated folder for the customer and environment. The top-level `~/sql/` folder holds a global `CLAUDE.md` with conventions that apply everywhere. Each customer/environment pair gets its own subfolder with a `CLAUDE.md` scoped to that database.
 
 ```
-~/sql-work/
+~/sql/
+  CLAUDE.md                        ← global conventions (applies to all sessions)
   customer-name/
-    CLAUDE.md
-    sprocs/
-    queries/
-    scripts/
+    environment/                   ← e.g., prod, dev, aad, wms
+      CLAUDE.md                    ← schema and conventions for this customer/environment
+      sprocs/
+      queries/
+      scripts/
 ```
 
 You can create this from the terminal:
 
 ```bash
-mkdir -p ~/sql-work/customer-name/sprocs
-mkdir -p ~/sql-work/customer-name/queries
-mkdir -p ~/sql-work/customer-name/scripts
+mkdir -p ~/sql/customer-name/environment/sprocs
+mkdir -p ~/sql/customer-name/environment/queries
+mkdir -p ~/sql/customer-name/environment/scripts
 ```
 
 ---
 
 ### Step 2 — Create the CLAUDE.md
 
-The `CLAUDE.md` file is what gives Claude Code context about the customer's database. Create one at the root of the customer folder:
+The `CLAUDE.md` in the environment folder is what gives Claude Code context about that specific database. Create one there:
 
 ```bash
-touch ~/sql-work/customer-name/CLAUDE.md
+touch ~/sql/customer-name/environment/CLAUDE.md
 ```
 
 Then open it and fill it in. Here's a starting template:
@@ -75,14 +77,14 @@ The more you put in here, the less you have to explain in each session. Schema d
 
 ### Step 3 — Open Claude Code in the folder
 
-Always open Claude Code from inside the customer folder so it picks up the `CLAUDE.md`:
+Always open Claude Code from inside the environment folder so it picks up the right `CLAUDE.md`. It will also inherit the global `CLAUDE.md` from `~/sql/` automatically.
 
 ```bash
-cd ~/sql-work/customer-name
+cd ~/sql/customer-name/environment
 claude
 ```
 
-From that point on, Claude Code knows the customer's conventions and can read or write any `.sql` file in the folder.
+From that point on, Claude Code knows both the global conventions and the customer's specific schema, and can read or write any `.sql` file in the folder.
 
 ---
 
@@ -164,7 +166,7 @@ so I can safely run it against the real database. Save it to scripts/test_usp_Ge
 
 ## Tips
 
-**Keep one CLAUDE.md per customer.** If you mix customers in one folder the context gets muddled. One folder, one `CLAUDE.md`, one customer.
+**Keep one environment folder per database.** If you mix customers or environments in one folder the context gets muddled. One folder, one `CLAUDE.md`, one database.
 
 **Seed the CLAUDE.md with CREATE TABLE output from SSMS.** Right-click any table in SSMS → Script Table as → CREATE To → Clipboard, then paste it into the `CLAUDE.md`. Claude Code will reference those column names and types automatically.
 
@@ -176,7 +178,7 @@ so I can safely run it against the real database. Save it to scripts/test_usp_Ge
 
 ## What this looks like end to end
 
-1. Open terminal, `cd ~/sql-work/customer-name`, run `claude`
+1. Open terminal, `cd ~/sql/customer-name/environment`, run `claude`
 2. Ask Claude to write or modify a procedure — it reads the `CLAUDE.md` automatically
 3. Claude creates or edits the `.sql` file in the folder
 4. Open the file in SSMS and run it
