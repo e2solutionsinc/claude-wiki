@@ -3,8 +3,6 @@
 !!! note "Draft"
     This page is a work in progress.
 
-Four in-person sessions for developers and SQL folks. The wiki is the reference material — sessions are for live demos and hands-on practice.
-
 ---
 
 ## Session 1 — What is Claude and Getting Started
@@ -58,8 +56,9 @@ Four in-person sessions for developers and SQL folks. The wiki is the reference 
 1. What Claude Code is — Claude inside your terminal, inside your project
 2. Installation walkthrough (wiki reference: [Claude Code (CLI)](getting-started/claude-code.md))
 3. What a CLAUDE.md is and why it matters
-4. Live demo: start a session from a project folder, ask Claude to read a file and explain it
-5. Live demo: make a real edit — fix a bug, rename something, add a section
+4. Useful tools — extending what Claude Code can read and work with (wiki reference: [Claude Code Useful Tools](getting-started/claude-code-tools.md))
+5. Live demo: start a session from a project folder, ask Claude to read a file and explain it
+6. Live demo: make a real edit — fix a bug, rename something, add a section
 
 ### Talking Points
 
@@ -78,7 +77,7 @@ Four in-person sessions for developers and SQL folks. The wiki is the reference 
 ### Agenda
 
 1. Giving Claude the right context for SQL work (schema, platform, conventions)
-2. Walkthrough of the sproc template — what each section does and why
+2. Briefly discuss how Claude uses the sproc template and coding examples
 3. Live demo: prompt Claude to build a sproc from a plain English description
 4. Live demo: paste an existing sproc, ask Claude to add error handling or a new param
 5. Prompting tips specific to T-SQL
