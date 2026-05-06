@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../projects/cowork-projects/">
+        <link rel="prev" href="../tsql-ssms/">
       
       
-        <link rel="next" href="../best-practices/">
+        <link rel="next" href="../projects/overview/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Training - Claude Wiki - E2 Solutions</title>
+        <title>T-SQL Claude Code - Claude Wiki - E2 Solutions</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#training-sessions" class="md-skip">
+        <a href="#t-sql-claude-code" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Training
+              T-SQL Claude Code
             
           </span>
         </div>
@@ -402,18 +402,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -434,7 +436,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -505,10 +507,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tsql-claude-code/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T-SQL Claude Code
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -524,6 +553,181 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-claude-code-for-t-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Claude Code for T-SQL?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-a-sql-work-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set up a SQL work folder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up a SQL work folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Create the folder structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-the-claudemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Create the CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-open-claude-code-in-the-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Open Claude Code in the folder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-new-stored-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing a new stored procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reviewing-a-procedure-before-deploying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reviewing a procedure before deploying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refactoring-an-existing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refactoring an existing procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-a-failing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging a failing procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-test-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating test scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-looks-like-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this looks like end to end
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -817,37 +1021,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Training
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../training/" class="md-nav__link">
         
   
   
@@ -863,182 +1040,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#session-1-what-is-claude-and-getting-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Session 1 — What is Claude and Getting Started
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Session 1 — What is Claude and Getting Started">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agenda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Agenda
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#talking-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Talking Points
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#session-2-cowork-claude-desktop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Session 2 — Cowork (Claude Desktop)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Session 2 — Cowork (Claude Desktop)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agenda_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Agenda
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#talking-points_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Talking Points
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#session-3-claude-code-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Session 3 — Claude Code (CLI)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Session 3 — Claude Code (CLI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agenda_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Agenda
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#talking-points_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Talking Points
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#session-4-sql-and-stored-procedures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Session 4 — SQL and Stored Procedures
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Session 4 — SQL and Stored Procedures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agenda_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Agenda
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#talking-points_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Talking Points
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1205,22 +1206,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#session-1-what-is-claude-and-getting-started" class="md-nav__link">
+  <a href="#why-claude-code-for-t-sql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session 1 — What is Claude and Getting Started
+        Why Claude Code for T-SQL?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Session 1 — What is Claude and Getting Started">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-a-sql-work-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set up a SQL work folder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up a SQL work folder">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#agenda" class="md-nav__link">
+  <a href="#step-1-create-the-folder-structure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agenda
+        Step 1 — Create the folder structure
       
     </span>
   </a>
@@ -1228,10 +1240,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#talking-points" class="md-nav__link">
+  <a href="#step-2-create-the-claudemd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Talking Points
+        Step 2 — Create the CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-open-claude-code-in-the-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Open Claude Code in the folder
       
     </span>
   </a>
@@ -1244,22 +1267,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#session-2-cowork-claude-desktop" class="md-nav__link">
+  <a href="#common-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session 2 — Cowork (Claude Desktop)
+        Common workflows
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Session 2 — Cowork (Claude Desktop)">
+    <nav class="md-nav" aria-label="Common workflows">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#agenda_1" class="md-nav__link">
+  <a href="#writing-a-new-stored-procedure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agenda
+        Writing a new stored procedure
       
     </span>
   </a>
@@ -1267,10 +1290,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#talking-points_1" class="md-nav__link">
+  <a href="#reviewing-a-procedure-before-deploying" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Talking Points
+        Reviewing a procedure before deploying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refactoring-an-existing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refactoring an existing procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-a-failing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging a failing procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-test-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating test scripts
       
     </span>
   </a>
@@ -1283,80 +1339,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#session-3-claude-code-cli" class="md-nav__link">
+  <a href="#tips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session 3 — Claude Code (CLI)
+        Tips
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Session 3 — Claude Code (CLI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agenda_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Agenda
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#talking-points_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Talking Points
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#session-4-sql-and-stored-procedures" class="md-nav__link">
+  <a href="#what-this-looks-like-end-to-end" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session 4 — SQL and Stored Procedures
+        What this looks like end to end
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Session 4 — SQL and Stored Procedures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agenda_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Agenda
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#talking-points_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Talking Points
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1377,86 +1377,127 @@
 
 
 
-<h1 id="training-sessions">Training Sessions</h1>
-<div class="admonition note">
-<p class="admonition-title">Draft</p>
-<p>This page is a work in progress.</p>
-</div>
-<p>Four in-person sessions for developers and SQL folks. The wiki is the reference material — sessions are for live demos and hands-on practice.</p>
+<h1 id="t-sql-claude-code">T-SQL Claude Code</h1>
+<p>This page covers how to use Claude Code (the CLI) for T-SQL work. Because Claude Code reads files directly from your local filesystem, the key is giving it a home folder for your SQL work so it automatically picks up the right context every time you open it.</p>
 <hr />
-<h2 id="session-1-what-is-claude-and-getting-started">Session 1 — What is Claude and Getting Started</h2>
-<p><strong>Format:</strong> 45-60 min | <strong>Tool:</strong> Claude.ai web</p>
-<h3 id="agenda">Agenda</h3>
-<ol>
-<li>What Claude is — an AI coding assistant, not a search engine</li>
-<li>What it's good at vs. where it falls short</li>
-<li>Data privacy — what goes to Anthropic, what doesn't</li>
-<li>Live demo: paste a query, ask Claude to explain it, then improve it</li>
-<li>Live demo: describe a problem in plain English, let Claude write the first draft</li>
-</ol>
-<h3 id="talking-points">Talking Points</h3>
-<ul>
-<li>It doesn't know your database — you have to give it context</li>
-<li>Treat it like a smart colleague who needs to be briefed, not a magic button</li>
-<li>The more specific your prompt, the better the output</li>
-<li>You can paste errors directly and ask what's wrong</li>
-</ul>
+<h2 id="why-claude-code-for-t-sql">Why Claude Code for T-SQL?</h2>
+<p>Claude Code reads your <code>CLAUDE.md</code> file automatically when you open it in a directory. That means if you set up a folder for a customer or project and drop a <code>CLAUDE.md</code> in it with their schema and conventions, every session starts with full context — no pasting, no repeating yourself.</p>
+<p>It also lets you work directly on <code>.sql</code> files. Claude Code can read, write, and edit files on disk, so you can have it generate a stored procedure and save it directly to the folder rather than copying from a chat window.</p>
 <hr />
-<h2 id="session-2-cowork-claude-desktop">Session 2 — Cowork (Claude Desktop)</h2>
-<p><strong>Format:</strong> 45-60 min | <strong>Tool:</strong> Claude Desktop — Cowork</p>
-<h3 id="agenda_1">Agenda</h3>
-<ol>
-<li>What Cowork is and how it differs from the web</li>
-<li>Setting up a Cowork project — schema context, naming conventions, standing rules</li>
-<li>Attaching reference files (data dictionary, templates, lookup lists)</li>
-<li>Live demo: set up a project for a recurring task (e.g. weekly report)</li>
-<li>Live demo: run a task inside the project, show context persistence</li>
-</ol>
-<h3 id="talking-points_1">Talking Points</h3>
-<ul>
-<li>Memory lives in the project, not the conversation — Claude won't remember what you said last time unless it's in the instructions</li>
-<li>Keep standing instructions short — one rule per line</li>
-<li>Best for recurring tasks where you want Claude to already know your environment</li>
-<li>Use the "Customer Name - DEV - AAD" naming format for projects</li>
-</ul>
+<h2 id="set-up-a-sql-work-folder">Set up a SQL work folder</h2>
+<h3 id="step-1-create-the-folder-structure">Step 1 — Create the folder structure</h3>
+<p>Create a dedicated folder for the customer or project. Keep each customer in their own folder so their <code>CLAUDE.md</code> context stays isolated.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>~/sql-work/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  customer-name/
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    CLAUDE.md
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    sprocs/
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    queries/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    scripts/
+</code></pre></div>
+<p>You can create this from the terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/sql-work/customer-name/sprocs
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/sql-work/customer-name/queries
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/sql-work/customer-name/scripts
+</code></pre></div>
 <hr />
-<h2 id="session-3-claude-code-cli">Session 3 — Claude Code (CLI)</h2>
-<p><strong>Format:</strong> 45-60 min | <strong>Tool:</strong> Claude Code (terminal)</p>
-<h3 id="agenda_2">Agenda</h3>
-<ol>
-<li>What Claude Code is — Claude inside your terminal, inside your project</li>
-<li>Installation walkthrough (wiki reference: <a href="../getting-started/claude-code/">Claude Code (CLI)</a>)</li>
-<li>What a CLAUDE.md is and why it matters</li>
-<li>Live demo: start a session from a project folder, ask Claude to read a file and explain it</li>
-<li>Live demo: make a real edit — fix a bug, rename something, add a section</li>
-</ol>
-<h3 id="talking-points_2">Talking Points</h3>
-<ul>
-<li>Claude Code reads your actual files — no copy/pasting</li>
-<li>CLAUDE.md is your briefing document — schema, conventions, environment all go there</li>
-<li>Global CLAUDE.md covers standards that apply everywhere (sproc template, naming rules)</li>
-<li>Project-level CLAUDE.md covers the specific account/database</li>
-<li>It will ask for confirmation before anything destructive</li>
-</ul>
+<h3 id="step-2-create-the-claudemd">Step 2 — Create the CLAUDE.md</h3>
+<p>The <code>CLAUDE.md</code> file is what gives Claude Code context about the customer's database. Create one at the root of the customer folder:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>touch<span class="w"> </span>~/sql-work/customer-name/CLAUDE.md
+</code></pre></div>
+<p>Then open it and fill it in. Here's a starting template:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># Customer Name — SQL Context</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="gu">## Database</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">-</span><span class="w"> </span>Server: [server name or IP]
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">-</span><span class="w"> </span>Database: [database name]
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">-</span><span class="w"> </span>SQL Server version: [e.g., 2019]
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="gu">## Conventions</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>Stored procedures prefixed with <span class="sb">`usp_`</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">-</span><span class="w"> </span>Temp tables prefixed with <span class="sb">`#tmp_`</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">-</span><span class="w"> </span>Always include <span class="sb">`SET NOCOUNT ON`</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="k">-</span><span class="w"> </span>Use <span class="sb">`TRY/CATCH`</span> for all error handling
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">-</span><span class="w"> </span>No <span class="sb">`SELECT *`</span> in production code
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="gu">## Key Tables</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>[Paste CREATE TABLE statements for the tables you work with most]
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="gu">## Notes</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>[Any customer-specific quirks, special patterns, or things to watch out for]
+</code></pre></div>
+<p>The more you put in here, the less you have to explain in each session. Schema definitions, naming rules, and known patterns are all worth including.</p>
 <hr />
-<h2 id="session-4-sql-and-stored-procedures">Session 4 — SQL and Stored Procedures</h2>
-<p><strong>Format:</strong> 45-60 min | <strong>Tool:</strong> Claude Code or Claude.ai web</p>
-<h3 id="agenda_3">Agenda</h3>
+<h3 id="step-3-open-claude-code-in-the-folder">Step 3 — Open Claude Code in the folder</h3>
+<p>Always open Claude Code from inside the customer folder so it picks up the <code>CLAUDE.md</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>~/sql-work/customer-name
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>claude
+</code></pre></div>
+<p>From that point on, Claude Code knows the customer's conventions and can read or write any <code>.sql</code> file in the folder.</p>
+<hr />
+<h2 id="common-workflows">Common workflows</h2>
+<h3 id="writing-a-new-stored-procedure">Writing a new stored procedure</h3>
+<p>Ask Claude Code to write the procedure and save it directly to the <code>sprocs/</code> folder.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Write a stored procedure called usp_GetOpenOrders.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Parameters:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- @wh_id NVARCHAR(10)
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>- @start_date VARCHAR(30)
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- @end_date VARCHAR(30)
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Logic: return all orders where status = &#39;OPEN&#39; within the date range for the
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>given warehouse. Join to t_location to include the location type.
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Save it to sprocs/usp_GetOpenOrders.sql
+</code></pre></div>
+<p>Claude Code will create the file using the conventions in your <code>CLAUDE.md</code> — the right prefix, <code>SET NOCOUNT ON</code>, <code>TRY/CATCH</code>, and so on — without you having to specify them every time.</p>
+<hr />
+<h3 id="reviewing-a-procedure-before-deploying">Reviewing a procedure before deploying</h3>
+<p>Drop the <code>.sql</code> file in the folder and ask Claude Code to review it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Review sprocs/usp_ProcessReceipt.sql before I deploy it.
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Check for: SQL injection risks, implicit conversions, missing error handling,
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>and any edge cases in the logic.
+</code></pre></div>
+<hr />
+<h3 id="refactoring-an-existing-procedure">Refactoring an existing procedure</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Refactor sprocs/usp_AllocateInventory.sql. It uses a cursor where a set-based
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>approach would work, and the same subquery is repeated three times.
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Don&#39;t change the procedure signature or output columns.
+</code></pre></div>
+<p>Claude Code will edit the file in place. You can review the diff before accepting the change.</p>
+<hr />
+<h3 id="debugging-a-failing-procedure">Debugging a failing procedure</h3>
+<p>Paste the error message directly into the chat:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>usp_ProcessShipment is throwing this error when called from Page Editor:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Msg 8114, Level 16, State 5
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Error converting data type varchar to numeric.
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Called with: @wh_id = &#39;101&#39;, @hu_id = &#39;HU-00442&#39;
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>The procedure is in sprocs/usp_ProcessShipment.sql
+</code></pre></div>
+<p>Claude Code will read the file and walk through where the type mismatch is likely happening.</p>
+<hr />
+<h3 id="generating-test-scripts">Generating test scripts</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Write a test script for usp_GetOpenOrders that wraps the EXEC in a BEGIN TRAN / ROLLBACK
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>so I can safely run it against the real database. Save it to scripts/test_usp_GetOpenOrders.sql
+</code></pre></div>
+<hr />
+<h2 id="tips">Tips</h2>
+<p><strong>Keep one CLAUDE.md per customer.</strong> If you mix customers in one folder the context gets muddled. One folder, one <code>CLAUDE.md</code>, one customer.</p>
+<p><strong>Seed the CLAUDE.md with CREATE TABLE output from SSMS.</strong> Right-click any table in SSMS → Script Table as → CREATE To → Clipboard, then paste it into the <code>CLAUDE.md</code>. Claude Code will reference those column names and types automatically.</p>
+<p><strong>Use the <code>sprocs/</code>, <code>queries/</code>, <code>scripts/</code> split.</strong> It keeps things organized and lets you say "look at everything in sprocs/" when you want Claude to review a set of procedures.</p>
+<p><strong>You still run the code in SSMS.</strong> Claude Code writes and edits the files. You copy the final <code>.sql</code> into SSMS (or open it from the folder) to execute it. Claude Code can't connect to SQL Server directly.</p>
+<hr />
+<h2 id="what-this-looks-like-end-to-end">What this looks like end to end</h2>
 <ol>
-<li>Giving Claude the right context for SQL work (schema, platform, conventions)</li>
-<li>Walkthrough of the sproc template — what each section does and why</li>
-<li>Live demo: prompt Claude to build a sproc from a plain English description</li>
-<li>Live demo: paste an existing sproc, ask Claude to add error handling or a new param</li>
-<li>Prompting tips specific to T-SQL</li>
+<li>Open terminal, <code>cd ~/sql-work/customer-name</code>, run <code>claude</code></li>
+<li>Ask Claude to write or modify a procedure — it reads the <code>CLAUDE.md</code> automatically</li>
+<li>Claude creates or edits the <code>.sql</code> file in the folder</li>
+<li>Open the file in SSMS and run it</li>
+<li>If something's wrong, paste the error back into Claude Code and iterate</li>
 </ol>
-<h3 id="talking-points_3">Talking Points</h3>
-<ul>
-<li>Always tell Claude the DB name, platform (WebWise/Advantage Architect), and relevant tables</li>
-<li>Paste <code>CREATE TABLE</code> scripts for the tables involved — Claude needs to know the columns</li>
-<li>Use <code>@in_debug = 'YES'</code> pattern for development and production troubleshooting</li>
-<li><code>@error_tag</code> pattern — set a unique tag before each statement so failures are traceable in <code>t_error_log</code></li>
-<li>Claude won't know about <code>t_log_control</code>, <code>t_error_log</code>, etc. unless you tell it — that's what the CLAUDE.md is for</li>
-</ul>
+<p>The <code>CLAUDE.md</code> does the heavy lifting so you spend time on the actual logic, not re-explaining conventions every session.</p>
 
 
 
