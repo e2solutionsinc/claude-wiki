@@ -34,8 +34,9 @@ nav:
   - Getting Started:
     - Overview: getting-started/overview.md
     - Claude.ai Web: getting-started/claude-web.md
-    - Claude Code (CLI): getting-started/claude-code.md
     - Claude Cowork: getting-started/claude-cowork.md
+    - Claude Code (CLI): getting-started/claude-code.md
+    - Claude Code Useful Tools: getting-started/claude-code-tools.md
   - Coding:
     - General Coding: coding.md
     - T-SQL Claude.ai Web: tsql-ssms.md
