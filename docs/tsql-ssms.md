@@ -1,4 +1,4 @@
-# Using Claude for T-SQL and Stored Procedures
+# T-SQL Claude.ai Web
 
 This page covers how to use Claude effectively when working in SSMS, Page Editor, and Advantage Architect. Since the code lives in SQL Server and not on a local filesystem, **Claude.ai web is the primary tool** for this workflow.
 

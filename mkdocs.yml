@@ -38,7 +38,8 @@ nav:
     - Claude Cowork: getting-started/claude-cowork.md
   - Coding:
     - General Coding: coding.md
-    - T-SQL and Stored Procedures: tsql-ssms.md
+    - T-SQL Claude.ai Web: tsql-ssms.md
+    - T-SQL Claude Code: tsql-claude-code.md
   - Projects and Memory:
     - Overview: projects/overview.md
     - Web Projects: projects/web-projects.md
