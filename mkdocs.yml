@@ -32,6 +32,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started:
+    - What is AI?: getting-started/what-is-ai.md
     - Overview: getting-started/overview.md
     - Claude.ai Web: getting-started/claude-web.md
     - Claude Cowork: getting-started/claude-cowork.md
