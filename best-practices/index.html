@@ -1067,6 +1067,78 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prompt-writing-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt writing tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt writing tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-the-format-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specify the format you want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-an-example-of-what-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show an example of what you want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tell-claude-what-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tell Claude what to avoid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-long-inputs-clearly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure long inputs clearly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterate-rather-than-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iterate rather than restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1286,6 +1358,78 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prompt-writing-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt writing tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt writing tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-the-format-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specify the format you want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-an-example-of-what-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show an example of what you want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tell-claude-what-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tell Claude what to avoid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-long-inputs-clearly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure long inputs clearly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterate-rather-than-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iterate rather than restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1349,6 +1493,40 @@
 <p>Instead of: "Call the <code>validateToken</code> function and check the <code>exp</code> field"<br />
 Try: "Add JWT expiry validation to the auth middleware"</p>
 </blockquote>
+<hr />
+<h2 id="prompt-writing-tips">Prompt writing tips</h2>
+<h3 id="specify-the-format-you-want">Specify the format you want</h3>
+<p>If you have a preference for how Claude responds, say so. Claude will default to whatever format seems reasonable, which may not match what you need.</p>
+<ul>
+<li>"Return only the SQL, no explanation"</li>
+<li>"Give me a bulleted list"</li>
+<li>"Keep the response under five sentences"</li>
+<li>"Show me the updated function only, not the whole file"</li>
+</ul>
+<h3 id="show-an-example-of-what-you-want">Show an example of what you want</h3>
+<p>When the format or style is hard to describe in words, give Claude an example. One example is often worth a paragraph of instructions.</p>
+<blockquote>
+<p>"Format the output like this: <code>[ERROR] src/file.ts:42 — message</code>"</p>
+</blockquote>
+<h3 id="tell-claude-what-to-avoid">Tell Claude what to avoid</h3>
+<p>If you know what you don't want, say it. This is especially useful when Claude tends to over-explain or add things you didn't ask for.</p>
+<ul>
+<li>"Do not add comments to the code"</li>
+<li>"Do not suggest refactoring anything outside of this function"</li>
+<li>"Do not change the existing function signatures"</li>
+</ul>
+<h3 id="structure-long-inputs-clearly">Structure long inputs clearly</h3>
+<p>When your prompt includes a lot of content (a block of code, a log file, a data sample), separate it clearly from your question. Claude reads everything, but clear structure helps it focus on the right thing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Here is the stored procedure:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>```sql
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-- paste here
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>```
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Question: Why would this return duplicate rows?
+</code></pre></div>
+<h3 id="iterate-rather-than-restart">Iterate rather than restart</h3>
+<p>If Claude's first response is close but not quite right, follow up with a correction rather than rewriting your entire prompt. Claude carries the full conversation history, so short follow-ups like "make it shorter" or "use a temp table instead" work well and are faster than starting over.</p>
 
 
 
