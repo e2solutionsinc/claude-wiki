@@ -15,6 +15,22 @@ An **LLM (Large Language Model)** is the specific type of AI that powers tools l
 
 Claude is Anthropic's LLM. It is designed to be helpful, harmless, and honest. When you use Claude.ai, Claude Code, or Claude Cowork, you are sending messages to Claude and receiving generated responses in return.
 
+## What Claude is good at
+
+- Writing and refactoring code based on a description of what you want
+- Explaining unfamiliar code, queries, or error messages
+- Drafting stored procedures, scripts, and boilerplate from a template or example
+- Summarizing documents and extracting key information
+- Debugging when you give it the full error message and relevant context
+- Generating first drafts that you review and refine
+
+## What Claude is not good at
+
+- Anything that requires live data — it has no connection to your database or the internet unless a tool provides it
+- Knowing your environment without being told — schema, platform, naming conventions all need to be provided
+- Tasks where accuracy is critical and unverified — always review output before using it in production
+- Long chains of dependent logic without checkpoints — break complex tasks into steps and verify as you go
+
 ## What to keep in mind
 
 - Claude can make mistakes. Always review its output, especially for code and data.
