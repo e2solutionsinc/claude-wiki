@@ -8,17 +8,48 @@
   <iframe src="https://e2solutionsinc-my.sharepoint.com/personal/darin_gunderman_e2_solutions/_layouts/15/embed.aspx?UniqueId=98a192b1-8894-4e25-ba02-db0d6fdf8233&embed=%7B%22ust%22%3Afalse%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" frameborder="0" scrolling="no" allowfullscreen title="AI Training Kick-off-20260603_125811-Meeting Recording.mp4"></iframe>
 </div>
 
-## Agenda
+## Meeting Notes from Granola
 
-1. What Claude is — an AI coding assistant, not a search engine (wiki reference: [What is AI?](../getting-started/what-is-ai.md))
-2. What it's good at vs. where it falls short (wiki reference: [What is AI?](../getting-started/what-is-ai.md#what-claude-is-good-at))
-3. Data privacy — what goes to Anthropic, what doesn't (wiki reference: [Data Privacy](../data-privacy.md))
-4. Live demo: paste a query, ask Claude to explain it, then improve it
-5. Live demo: describe a problem in plain English, let Claude write the first draft
+### AI Training Session Overview
 
-## Talking Points
+- First of 6-week AI training series for services team
+- 30-minute sessions, recorded for those who can't attend
+- Focus on standardizing AI tools for competitive advantage
+  - Rocket PD team: 2 developers now outperform previous 5-person team
+  - Sales/marketing: Pipeline grew from minimal to $190k using AI automation
+  - Services team: Currently inconsistent AI usage
 
-- It doesn't know your database — you have to give it context (wiki reference: [What is AI? — What Claude is not good at](../getting-started/what-is-ai.md#what-claude-is-not-good-at))
-- Treat it like a smart colleague who needs to be briefed, not a magic button
-- The more specific your prompt, the better the output
-- You can paste errors directly and ask what's wrong (wiki reference: [What is AI? — What Claude is good at](../getting-started/what-is-ai.md#what-claude-is-good-at))
+### Approved Tools & Safety Guidelines
+
+- Approved tools for services team:
+  1. Claude (team accounts for everyone)
+  2. Granola (free version for meeting transcription)
+- Safety requirements:
+  - Only use paid team accounts (never free/public accounts)
+  - Free accounts share data publicly - major security risk
+  - Always review AI output before sending
+  - Never include confidential info: names, addresses, financials, client data
+- Usage guidelines:
+  - Can use: SOWs, proposals, meeting summaries, process documentation
+  - Cannot use: Final decisions on scoping/pricing without human review
+  - AI-generated content isn't your intellectual property until modified
+
+### RCRQ Framework for Better Prompting
+
+- Framework to borrow expertise vs. treating AI like Google search
+- Four components:
+  1. **Role**: Whose brain are you borrowing (e.g., "senior warehouse operations consultant")
+  2. **Context**: All relevant background information about the problem
+  3. **Request**: Specifically what you want AI to produce
+  4. **Questions**: Always ask AI to clarify before proceeding
+- Example application:
+  - Customer complaint: "Inventory accuracy worse since WMS implementation"
+  - Weak prompt: "Help me solve inventory issues"
+  - Strong prompt: Full context + request for diagnostic questions + permission to ask clarifying questions
+- Live demo showed detailed process, system, user behavior, and KPI questions generated
+
+### Next Steps
+
+- Challenge: Use RCRQ framework on real customer problem this week
+- New Slack channel created for AI training discussion
+- Next session: Building reusable prompts and skills (alternating between LLM and Claude code topics)
