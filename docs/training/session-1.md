@@ -1,7 +1,5 @@
 # Session 1 — What is Claude and Getting Started
 
-**Format:** 45-60 min | **Tool:** Claude.ai Web
-
 ## Recording
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%;">
