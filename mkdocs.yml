@@ -58,10 +58,10 @@ nav:
     - Granola Meeting Transcription: soft-skills/granola.md
     - Organizing Meeting Notes: soft-skills/meeting-notes.md
     - Jira Reports with Cowork: soft-skills/jira-reports.md
+  - Training:
+    - Session 1: training/session-1.md
   - Best Practices: best-practices.md
   - Data Privacy: data-privacy.md
   - FAQ: faq.md
-  - Training:
-    - Session 1: training/session-1.md
   - Important Notes: important-notes.md
   - Snake Break: snake-break.md
