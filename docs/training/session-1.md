@@ -2,6 +2,12 @@
 
 **Format:** 45-60 min | **Tool:** Claude.ai Web
 
+## Recording
+
+<div class="video-wrapper">
+  <iframe src="https://e2solutionsinc-my.sharepoint.com/personal/darin_gunderman_e2_solutions/_layouts/15/embed.aspx?UniqueId=98a192b1-8894-4e25-ba02-db0d6fdf8233&embed=%7B%22ust%22%3Afalse%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" frameborder="0" scrolling="no" allowfullscreen title="AI Training Kick-off-20260603_125811-Meeting Recording.mp4"></iframe>
+</div>
+
 ## Agenda
 
 1. What Claude is — an AI coding assistant, not a search engine (wiki reference: [What is AI?](../getting-started/what-is-ai.md))

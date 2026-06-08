@@ -61,5 +61,7 @@ nav:
   - Best Practices: best-practices.md
   - Data Privacy: data-privacy.md
   - FAQ: faq.md
+  - Training:
+    - Session 1: training/session-1.md
   - Important Notes: important-notes.md
   - Snake Break: snake-break.md
