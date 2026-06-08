@@ -1,4 +1,4 @@
-# Session 1 — What is Claude and Getting Started
+# Session 1
 
 ## Recording
 
